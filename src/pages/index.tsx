@@ -1,10 +1,38 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import Header from "@/components/Header";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { api } from "@/services";
+import ProductCard from "@/components/ProductCard";
+import { DivShow } from "./style";
 
-const inter = Inter({ subsets: ["latin"] });
+export interface IProducts {
+  id: number;
+  name: string;
+  brand: string;
+  description: string;
+  photo: string;
+  price: string;
+  createdAt: string;
+  updatedAt: string;
+}
 
-export default function Home() {
+export const getStaticProps: GetStaticProps<{
+  products: IProducts[];
+}> = async () => {
+  const res = await api.get("");
+
+  const products: IProducts[] = res.data.products;
+
+  return {
+    props: {
+      products,
+    },
+  };
+};
+
+export default function Home({
+  products,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Head>
@@ -15,9 +43,11 @@ export default function Home() {
       </Head>
       <main>
         <Header />
-        <div>
-          <p>Mks Challenge</p>
-        </div>
+        <DivShow>
+          {products.map((product) => (
+            <ProductCard key={product.id} {...product} />
+          ))}
+        </DivShow>
       </main>
     </>
   );
