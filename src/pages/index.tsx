@@ -4,6 +4,7 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { api } from "@/services";
 import ProductCard from "@/components/ProductCard";
 import { DivShow } from "./style";
+import Footer from "@/components/Footer";
 
 export interface IProducts {
   id: number;
@@ -48,6 +49,7 @@ export default function Home({
             <ProductCard key={product.id} {...product} />
           ))}
         </DivShow>
+        <Footer />
       </main>
     </>
   );
