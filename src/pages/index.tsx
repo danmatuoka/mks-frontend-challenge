@@ -5,6 +5,7 @@ import { api } from "@/services";
 import ProductCard from "@/components/ProductCard";
 import { DivShow } from "./style";
 import Footer from "@/components/Footer";
+import Cart from "@/components/Cart";
 
 export interface IProducts {
   id: number;
@@ -12,9 +13,8 @@ export interface IProducts {
   brand: string;
   description: string;
   photo: string;
-  price: string;
-  createdAt: string;
-  updatedAt: string;
+  price: number;
+  quantity?: number;
 }
 
 export const getStaticProps: GetStaticProps<{
@@ -43,6 +43,7 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <Cart />
         <Header />
         <DivShow>
           {products.map((product) => (

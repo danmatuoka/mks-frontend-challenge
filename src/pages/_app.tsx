@@ -1,6 +1,8 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Montserrat } from "@next/font/google";
+import { Provider } from "react-redux";
+import { store } from "../store";
 
 export const montserrat = Montserrat({
   subsets: ["latin"],
@@ -9,8 +11,10 @@ export const montserrat = Montserrat({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={montserrat.className}>
-      <Component {...pageProps} />
-    </main>
+    <Provider store={store}>
+      <main className={montserrat.className}>
+        <Component {...pageProps} />
+      </main>
+    </Provider>
   );
 }

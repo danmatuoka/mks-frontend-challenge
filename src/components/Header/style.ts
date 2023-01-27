@@ -16,5 +16,7 @@ export const DivHeader = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: white;
+    font-weight: 600;
   }
 `;
