@@ -41,6 +41,19 @@ export const NameText = styled.p`
   width: 70px;
 `;
 
+export const DivLabel = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  label {
+    position: absolute;
+    font-size: 8px;
+    top: -15px;
+    left: 2px;
+  }
+`;
+
 export const DivQt = styled.div`
   display: flex;
   justify-content: space-between;

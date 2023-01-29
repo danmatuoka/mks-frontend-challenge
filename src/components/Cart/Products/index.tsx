@@ -6,7 +6,14 @@ import {
 } from "../../../store/products/productsSlice";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
-import { BtnCheck, DivAside, DivContent, DivQt, NameText } from "./style";
+import {
+  BtnCheck,
+  DivAside,
+  DivContent,
+  DivLabel,
+  DivQt,
+  NameText,
+} from "./style";
 
 const Products = () => {
   const prd = useSelector((state: RootState) => state.products.cartProducts);
@@ -32,18 +39,22 @@ const Products = () => {
                   height="70"
                 />
                 <NameText>{elem.name}</NameText>
-                <DivQt>
-                  <BtnCheck
-                    onClick={() => dispatch(removeProducts(elem.id))}
-                    data-testid="remove-products"
-                  >
-                    -
-                  </BtnCheck>
-                  <span>{elem.quantity}</span>
-                  <BtnCheck onClick={() => dispatch(addProducts(elem))}>
-                    +
-                  </BtnCheck>
-                </DivQt>
+                <DivLabel>
+                  <label>Qtd:</label>
+
+                  <DivQt>
+                    <BtnCheck
+                      onClick={() => dispatch(removeProducts(elem.id))}
+                      data-testid="remove-products"
+                    >
+                      -
+                    </BtnCheck>
+                    <span>{elem.quantity}</span>
+                    <BtnCheck onClick={() => dispatch(addProducts(elem))}>
+                      +
+                    </BtnCheck>
+                  </DivQt>
+                </DivLabel>
                 <p>
                   {Number(elem.price).toLocaleString("pt-br", {
                     style: "currency",
