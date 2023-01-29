@@ -2,6 +2,7 @@ import { RootState } from "@/store";
 import {
   removeProducts,
   addProducts,
+  removeAllProducts,
 } from "../../../store/products/productsSlice";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,6 +18,12 @@ const Products = () => {
         prd.map((elem) => {
           return (
             <DivAside key={elem.id} data-testid="cart-product">
+              <button
+                className="btn-card-cart"
+                onClick={() => dispatch(removeAllProducts(elem.id))}
+              >
+                X
+              </button>
               <DivContent>
                 <Image
                   src={elem.photo}

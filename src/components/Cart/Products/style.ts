@@ -5,6 +5,20 @@ export const DivAside = styled.div`
   padding: 15px;
   width: 100%;
   justify-self: flex-start;
+  position: relative;
+
+  .btn-card-cart {
+    height: 18px;
+    width: 18px;
+    background-color: black;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 8px;
+    position: absolute;
+    right: 8px;
+    top: 5px;
+  }
 `;
 
 export const DivContent = styled.div`
@@ -15,10 +29,16 @@ export const DivContent = styled.div`
   width: 100%;
   padding: 15px;
   border-radius: 8px;
+
+  p {
+    font-weight: 700;
+    font-size: 14px;
+  }
 `;
 
 export const NameText = styled.p`
   font-size: 13px;
+  width: 70px;
 `;
 
 export const DivQt = styled.div`
