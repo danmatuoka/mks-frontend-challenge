@@ -51,6 +51,51 @@ export const DivTitle = styled.div`
   }
 `;
 
+export const DivOverflow = styled.div`
+  width: 100%;
+  padding: 5px;
+  max-height: 490px;
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #666666;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #333333;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  @media only screen and (max-width: 800px) {
+    max-height: 420px;
+  }
+`;
+
 export const DivCartProducts = styled.div`
   width: 100%;
   bottom: 0;

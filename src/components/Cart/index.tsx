@@ -3,6 +3,7 @@ import {
   BtnCart,
   ContainerAside,
   DivCartProducts,
+  DivOverflow,
   DivTitle,
   DivTotal,
 } from "./style";
@@ -40,7 +41,9 @@ const Cart = () => {
           X
         </button>
       </DivTitle>
-      <Products />
+      <DivOverflow>
+        <Products />
+      </DivOverflow>
       <DivCartProducts>
         <DivTotal>
           <span>Total:</span>
