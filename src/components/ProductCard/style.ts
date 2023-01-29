@@ -10,6 +10,7 @@ export const DivCard = styled.div`
   height: 285px;
   padding-top: 10px;
   border-radius: 8px;
+  background-color: white;
   box-shadow: 0px 0px 8px 1px rgba(168, 168, 168, 1);
 
   .title-card {

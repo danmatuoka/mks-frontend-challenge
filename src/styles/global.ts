@@ -11,6 +11,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: #F9F9F9;
 }
 
 a {
@@ -20,6 +21,11 @@ a {
 
 button {
     cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+    transition: 300ms;
 }
 
 `;

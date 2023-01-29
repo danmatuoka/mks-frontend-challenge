@@ -5,6 +5,7 @@ import ShopIcon from "../ShopIcon";
 import { DivCard } from "./style";
 import { useDispatch } from "react-redux";
 import { addProducts } from "../../store/products/productsSlice";
+import { openBuyBtn } from "../../store/cart/cartSlice";
 
 const ProductCard = (product: IProducts) => {
   const dispatch = useDispatch();
@@ -25,7 +26,10 @@ const ProductCard = (product: IProducts) => {
       <p>{product.description}</p>
       <button
         className={montserrat.className}
-        onClick={() => dispatch(addProducts(product))}
+        onClick={() => {
+          dispatch(addProducts(product));
+          dispatch(openBuyBtn());
+        }}
         data-testid="btn-add"
       >
         <ShopIcon /> COMPRAR

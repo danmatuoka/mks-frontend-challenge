@@ -38,6 +38,7 @@ export const DivTitle = styled.div`
     color: white;
     font-weight: 600;
     font-size: 18px;
+    width: 120px;
   }
 
   button {

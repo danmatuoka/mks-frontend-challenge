@@ -11,8 +11,11 @@ const cartSlice = createSlice({
     open: (state) => {
       state.isOpen = !state.isOpen;
     },
+    openBuyBtn: (state) => {
+      state.isOpen = true;
+    },
   },
 });
 
-export const { open } = cartSlice.actions;
+export const { open, openBuyBtn } = cartSlice.actions;
 export default cartSlice.reducer;
