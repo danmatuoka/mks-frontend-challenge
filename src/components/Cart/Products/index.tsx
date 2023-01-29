@@ -1,5 +1,8 @@
 import { RootState } from "@/store";
-import { removeProducts, addProducts } from "@/store/products/productsSlice";
+import {
+  removeProducts,
+  addProducts,
+} from "../../../store/products/productsSlice";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { BtnCheck, DivAside, DivContent, DivQt, NameText } from "./style";
@@ -7,13 +10,13 @@ import { BtnCheck, DivAside, DivContent, DivQt, NameText } from "./style";
 const Products = () => {
   const prd = useSelector((state: RootState) => state.products.cartProducts);
   const dispatch = useDispatch();
-  console.log(prd);
+
   return (
     <>
       {prd &&
         prd.map((elem) => {
           return (
-            <DivAside key={elem.id}>
+            <DivAside key={elem.id} data-testid="cart-product">
               <DivContent>
                 <Image
                   src={elem.photo}
@@ -23,7 +26,10 @@ const Products = () => {
                 />
                 <NameText>{elem.name}</NameText>
                 <DivQt>
-                  <BtnCheck onClick={() => dispatch(removeProducts(elem.id))}>
+                  <BtnCheck
+                    onClick={() => dispatch(removeProducts(elem.id))}
+                    data-testid="remove-products"
+                  >
                     -
                   </BtnCheck>
                   <span>{elem.quantity}</span>

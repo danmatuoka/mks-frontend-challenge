@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Header from "@/components/Header";
+import Header from "../components/Header";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { api } from "@/services";
-import ProductCard from "@/components/ProductCard";
+import { api } from "../services";
+import ProductCard from "../components/ProductCard";
 import { DivShow } from "./style";
-import Footer from "@/components/Footer";
-import Cart from "@/components/Cart";
+import Footer from "../components/Footer";
+import Cart from "../components/Cart";
 
 export interface IProducts {
   id: number;

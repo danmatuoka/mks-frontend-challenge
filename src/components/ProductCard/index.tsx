@@ -1,16 +1,16 @@
 import { IProducts } from "@/pages";
-import { montserrat } from "@/pages/_app";
+import { montserrat } from "../../pages/_app";
 import Image from "next/image";
 import ShopIcon from "../ShopIcon";
 import { DivCard } from "./style";
 import { useDispatch } from "react-redux";
-import { addProducts } from "@/store/products/productsSlice";
+import { addProducts } from "../../store/products/productsSlice";
 
 const ProductCard = (product: IProducts) => {
   const dispatch = useDispatch();
 
   return (
-    <DivCard>
+    <DivCard data-testid="cards">
       <Image src={product.photo} alt={product.name} width={140} height={130} />
       <div className="title-card">
         <h3>{`${product.name}`}</h3>
@@ -26,6 +26,7 @@ const ProductCard = (product: IProducts) => {
       <button
         className={montserrat.className}
         onClick={() => dispatch(addProducts(product))}
+        data-testid="btn-add"
       >
         <ShopIcon /> COMPRAR
       </button>

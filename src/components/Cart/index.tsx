@@ -1,4 +1,4 @@
-import { montserrat } from "@/pages/_app";
+import { montserrat } from "../../pages/_app";
 import {
   BtnCart,
   ContainerAside,
@@ -8,7 +8,7 @@ import {
 } from "./style";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
-import { open } from "@/store/cart/cartSlice";
+import { open } from "../../store/cart/cartSlice";
 import Products from "./Products";
 import { IProducts } from "@/pages";
 
@@ -26,12 +26,16 @@ const Cart = () => {
   };
 
   return (
-    <ContainerAside className={visible ? "active" : ""}>
+    <ContainerAside
+      className={visible ? "active" : ""}
+      data-testid="aside-cart"
+    >
       <DivTitle>
         <p>Carrinho de compras</p>
         <button
           className={montserrat.className}
           onClick={() => dispatch(open())}
+          data-testid="btn-close"
         >
           X
         </button>
@@ -40,7 +44,7 @@ const Cart = () => {
       <DivCartProducts>
         <DivTotal>
           <span>Total:</span>
-          <span>
+          <span data-testid="cart-total">
             {sumAllProducts(prd).toLocaleString("pt-br", {
               style: "currency",
               currency: "BRL",

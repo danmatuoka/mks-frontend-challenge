@@ -3,7 +3,7 @@ import { DivFooter } from "./style";
 const Footer = () => {
   return (
     <DivFooter>
-      <p>MKS sistemas © Todos os direitos reservados</p>
+      <p data-testid="footer">MKS sistemas © Todos os direitos reservados</p>
     </DivFooter>
   );
 };
