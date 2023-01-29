@@ -4,7 +4,7 @@ import { DivHeader } from "./style";
 import { useDispatch, useSelector } from "react-redux";
 import { open } from "../../store/cart/cartSlice";
 import { RootState } from "../../store";
-import { montserrat } from "../../pages/_app";
+import { montserrat } from "../../pages/_app.page";
 
 const Header = () => {
   const prd = useSelector((state: RootState) => state.products.cartProducts);

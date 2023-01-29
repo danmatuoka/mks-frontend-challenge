@@ -1,4 +1,4 @@
-import { IProducts } from "@/pages";
+import { IProducts } from "@/pages/index.page";
 
 export const mockedProduct1: IProducts = {
   id: 1,

@@ -1,4 +1,4 @@
-import { montserrat } from "../../pages/_app";
+import { montserrat } from "../../pages/_app.page";
 import {
   BtnCart,
   ContainerAside,
@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { open } from "../../store/cart/cartSlice";
 import Products from "./Products";
-import { IProducts } from "@/pages";
+import { IProducts } from "@/pages/index.page";
 
 const Cart = () => {
   const visible = useSelector((state: RootState) => state.cart.isOpen);

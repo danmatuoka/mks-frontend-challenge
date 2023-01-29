@@ -1,5 +1,5 @@
-import { IProducts } from "@/pages";
-import { montserrat } from "../../pages/_app";
+import { IProducts } from "@/pages/index.page";
+import { montserrat } from "../../pages/_app.page";
 import Image from "next/image";
 import ShopIcon from "../ShopIcon";
 import { DivCard } from "./style";
