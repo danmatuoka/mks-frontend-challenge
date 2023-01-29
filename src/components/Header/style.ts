@@ -19,4 +19,14 @@ export const DivHeader = styled.div`
     background-color: white;
     font-weight: 600;
   }
+
+  @media only screen and (max-width: 800px) {
+    height: 50px;
+    padding: 30px;
+
+    button {
+      width: 70px;
+      height: 35px;
+    }
+  }
 `;

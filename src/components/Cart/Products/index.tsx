@@ -39,10 +39,10 @@ const Products = () => {
                   height="70"
                 />
                 <NameText>{elem.name}</NameText>
-                <DivLabel>
-                  <label>Qtd:</label>
+                <DivQt>
+                  <DivLabel>
+                    <label>Qtd:</label>
 
-                  <DivQt>
                     <BtnCheck
                       onClick={() => dispatch(removeProducts(elem.id))}
                       data-testid="remove-products"
@@ -53,15 +53,15 @@ const Products = () => {
                     <BtnCheck onClick={() => dispatch(addProducts(elem))}>
                       +
                     </BtnCheck>
-                  </DivQt>
-                </DivLabel>
-                <p>
-                  {Number(elem.price).toLocaleString("pt-br", {
-                    style: "currency",
-                    currency: "BRL",
-                    minimumFractionDigits: 0,
-                  })}
-                </p>
+                  </DivLabel>
+                  <p>
+                    {Number(elem.price).toLocaleString("pt-br", {
+                      style: "currency",
+                      currency: "BRL",
+                      minimumFractionDigits: 0,
+                    })}
+                  </p>
+                </DivQt>
               </DivContent>
             </DivAside>
           );

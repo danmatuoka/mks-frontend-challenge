@@ -20,6 +20,10 @@ export const ContainerAside = styled.aside`
     right: 0;
     transition: 550ms;
   }
+
+  @media only screen and (max-width: 800px) {
+    width: 320px;
+  }
 `;
 
 export const DivTitle = styled.div`

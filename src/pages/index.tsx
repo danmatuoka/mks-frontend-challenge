@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { api } from "../services";
 import ProductCard from "../components/ProductCard";
-import { DivShow } from "./style";
+import { DivHome, DivShow } from "./style";
 import Footer from "../components/Footer";
 import Cart from "../components/Cart";
 
@@ -42,7 +42,7 @@ export default function Home({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <DivHome>
         <Cart />
         <Header />
         <DivShow>
@@ -51,7 +51,7 @@ export default function Home({
           ))}
         </DivShow>
         <Footer />
-      </main>
+      </DivHome>
     </>
   );
 }
